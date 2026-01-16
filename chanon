@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>พูลวิลล่าพี่ชานนท์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1e6091;
+  --green:#2d6a4f;
+  --brown:#8d6e63;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f5fbff;
+  color:#2b2b2b;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("ใส่รูปพื้นหลังทะเลของคุณที่นี่");
+  background-size:cover;
+  background-position:center;
+  padding:40px 20px;
+  color:white;
+}
+
+.header-wrap{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.logo-area{
+  width:120px;
+  height:120px;
+  background:white;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.logo-area img{
+  max-width:90px;
+  max-height:90px;
+}
+
+.header-text h1{
+  margin:0;
+  font-size:38px;
+  color:#e3f2fd;
+}
+
+.header-text p{
+  margin-top:8px;
+  font-size:18px;
+  color:#cfe8ff;
+}
+
+/* ===== MAIN ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.villa{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+  position:relative;
+  height: 600px;
+  overflow:hidden;
+}
+
+.gallery img{
+  position:absolute;
+  width:100%;
+  height:600px;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity .8s ease,transform 1s ease;
+}
+
+.gallery img.active{
+  opacity:1;
+  transform:scale(1);
+  z-index:1;
+}
+
+/* arrows */
+.nav{
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  padding:0 20px;
+  transform:translateY(-50%);
+  z-index:5;
+}
+
+.nav button{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:none;
+  background:rgba(0,0,0,.45);
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.nav button:hover{
+  background:rgba(0,0,0,.7);
+  transform:scale(1.15);
+}
+
+/* ===== CONTENT ===== */
+.content{
+  padding:25px;
+}
+
+.content h2{
+  color:var(--blue);
+  margin-top:0;
+}
+
+.tags{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.tag{
+  background:var(--green);
+  color:white;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+.price{
+  font-size:24px;
+  font-weight:600;
+  color:var(--brown);
+  margin:15px 0;
+}
+
+.contact{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.contact-box{
+  padding:14px 20px;
+  border-radius:10px;
+  font-size:16px;
+  color:white;
+  background:var(--blue);
+}
+
+.contact-box:last-child{
+  background:#06c755;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#e3f2fd;
+  color:#555;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .header-wrap{
+    justify-content:center;
+    text-align:center;
+  }
+  .header-text h1{font-size:28px;}
+  .gallery{height:280px;}
+  .gallery img{height:280px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="logo-area">
+      <img src="46350.jpg" alt="โลโก้">
+    </div>
+    <div class="header-text">
+      <h1>พูลวิลล่าพี่ชานนท์</h1>
+      <p>พักผ่อนหรูหรา ใกล้บางแสน ธรรมชาติรอบตัว</p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="villa">
+
+    <div class="gallery">
+      <img src="46339_0.jpg" class="active">
+      <img src="46340_0.jpg">
+      <img src="46341_0.jpg">
+      <img src="46342_0.jpg">
+      <img src="46337_0.jpg">
+
+      <div class="nav">
+        <button onclick="prev()">❮</button>
+        <button onclick="next()">❯</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>พูลวิลล่าส่วนตัวริมทะเล</h2>
+
+      <div class="tags">
+        <div class="tag">🏝️ วิวสวย</div>
+        <div class="tag">🏊 สระส่วนตัว</div>
+        <div class="tag">🌴 ธรรมชาติ</div>
+      </div>
+
+      <p>
+        บ้านพักพูลวิลล่าส่วนตัว เหมาะสำหรับครอบครัว
+        และกลุ่มเพื่อน บรรยากาศเงียบสงบ ใกล้ชายหาด
+      </p>
+
+      <div class="price">เริ่มต้น 14,900 บาท / คืน</div>
+
+      <div class="contact">
+        <div class="contact-box">📞 โทร: 063-632-4789</div>
+        <div class="contact-box">💬 LINE: 39land</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+พูลวิลล่าวิวบางแสน | เหมาะสำหรับครอบครัว
+</footer>
+
+<script>
+const images=document.querySelectorAll('.gallery img');
+let index=0;
+
+function showImage(i){
+  images.forEach(img=>img.classList.remove('active'));
+  images[i].classList.add('active');
+}
+
+function next(){
+  index=(index+1)%images.length;
+  showImage(index);
+}
+
+function prev(){
+  index=(index-1+images.length)%images.length;
+  showImage(index);
+}
+
+setInterval(next,5000);
+</script>
+
+</body>
+</html>
